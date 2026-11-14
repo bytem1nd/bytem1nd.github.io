@@ -1,0 +1,16 @@
+{%- comment -%}
+  Embeds a PDF stored under /assets/pdf/.
+  Usage: {% include embed-pdf.html src="informe.pdf" title="Informe" height="80vh" %}
+  - src:    file name inside /assets/pdf/ (or a full path starting with "/")
+  - title:  accessible title (optional)
+  - height: CSS height (optional, default 80vh)
+{%- endcomment -%}
+{%- assign _pdf_src = include.src -%}
+{%- unless _pdf_src contains '/' -%}
+  {%- assign _pdf_src = _pdf_src | prepend: '/assets/pdf/' -%}
+{%- endunless -%}
+<link rel="stylesheet" href="{{ '/assets/css/embed-pdf.css' | relative_url }}">
+
+<div class="embed-pdf"{% if include.height %} style="height: {{ include.height }}"{% endif %}>
+  <iframe src="{{ _pdf_src | relative_url }}" title="{{ include.title | default: 'PDF' }}" loading="lazy"></iframe>
+</div>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <rect width="1024" height="1024" fill="#03110a"/>
+  <!-- mente: perfil de cabeza mirando a la derecha -->
+  <path d="M614 850 V765 C674 775 724 760 728 700 L730 648 L798 596 L750 500 C758 460 754 430 754 400 C754 250 634 140 494 140 C344 140 234 260 234 430 C234 560 284 640 334 700 L352 850"
+        fill="none" stroke="#00a82f" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- byte 01000010 (0x42, "B" en ASCII), leído por filas -->
+  <g fill="none" stroke="#00ff41" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+    <!-- fila 1: 0 1 -->
+    <rect x="480" y="255" width="38" height="60" rx="19"/>
+    <path d="M600 271 L618 255 V315"/>
+    <!-- fila 2: 0 0 -->
+    <rect x="480" y="365" width="38" height="60" rx="19"/>
+    <rect x="590" y="365" width="38" height="60" rx="19"/>
+    <!-- fila 3: (hueco) 0 -->
+    <rect x="590" y="475" width="38" height="60" rx="19"/>
+    <!-- fila 4: 1 0 -->
+    <path d="M490 601 L508 585 V645"/>
+    <rect x="590" y="585" width="38" height="60" rx="19"/>
+  </g>
+  <!-- hueco del bit extraído -->
+  <rect x="467" y="470" width="64" height="70" rx="12" fill="none" stroke="#00ff41" stroke-width="5" stroke-dasharray="14 12"/>
+  <!-- bit anómalo: un 1 donde debía haber un 0 -->
+  <path d="M355 491 L373 475 V535" fill="none" stroke="#ff3b3b" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" transform="rotate(-10 364 505)"/>
+  <!-- lupa: el mango corta el contorno de la cabeza -->
+  <path d="M296 573 L218 651" stroke="#03110a" stroke-width="58" stroke-linecap="round"/>
+  <path d="M308 561 L218 651" stroke="#00a82f" stroke-width="28" stroke-linecap="round"/>
+  <circle cx="364" cy="505" r="70" fill="none" stroke="#00a82f" stroke-width="18"/>
+</svg>

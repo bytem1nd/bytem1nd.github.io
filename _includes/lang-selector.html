@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="{{ '/assets/css/lang-selector.css' | relative_url }}">
+
+<div class="lang-dropdown">
+    <select class="lang-select" aria-label="{% if site.active_lang == 'es' %}Seleccionar idioma{% else %}Select language{% endif %}">
+    {%- for code in site.languages -%}
+        <option value="{% if code == site.default_lang %}{{ page.url }}{% else %}/{{ code }}{{ page.url }}{% endif %}"
+                lang="{{ code }}"
+                {% if code == site.active_lang %}selected{% endif %}>
+            {% case code %}
+            {% when 'en' %}🇺🇸 English
+            {% when 'es' %}🇪🇸 Español
+            {% else %}{{ code }}
+            {% endcase %}
+        </option>
+    {%- endfor -%}
+    </select>
+</div>
+
+<script>
+document.querySelectorAll('.lang-select').forEach(function (select) {
+    select.addEventListener('change', function () {
+        window.location.href = select.value;
+    });
+});
+</script>
